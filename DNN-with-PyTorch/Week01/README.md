@@ -1,7 +1,5 @@
 # Week1
 
-Based on MIT 6.034 Artificial Intelligence
-
 - Neural net : [Link](https://www.youtube.com/watch?v=uXt8qF2Zzfo)
 - Deep neural net : [Link](https://www.youtube.com/watch?v=VrMHA3yX_QI)
 - SVM : [Link](https://www.youtube.com/watch?v=_PwhiWxHK8o&list=PLUl4u3cNGP63gFHB6xb-kVBiQHYe_4hSi&index=17)
