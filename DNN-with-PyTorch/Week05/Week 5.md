@@ -26,3 +26,8 @@ model.eval()
 
 - 만약 모든 weight를 1 bias를 0으로 초기화 한 후 트레이닝 시킬 경우
   - 각각의 레이어가 같은 기울기를 가지고 있기 때문에 업데이트가 정상적으로 동작하지 않음
+
+## 8.4 Gradient Descent with Momentum
+
+- It helps to escape local optima
+
