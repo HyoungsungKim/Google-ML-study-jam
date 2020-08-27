@@ -1,4 +1,4 @@
-# Week1
+# PWeek1
 
 ## Bayesian approach to statistics
 
@@ -7,22 +7,28 @@
 Frequentist inference vs Baysian inference
 
 - Frequentists treat the objective(객관적)
-  - Parameter(theta) is fixed
-  - Data is random
-  - Want to find optimal point
+  - ***Parameter(theta) is fixed***
+  - ***Data is random***
+  - Parameter가 고정되어 있기 때문에 data(결과)는 해봐야지 알 수 있다고 생각하는 것
   - Work only when the number of data points is much bigger than the number of parameters
   - Use maximum likelihood to train model
-    - Try to find parameters theta that maximize the likelihood
+    - ***Try to find parameters*** theta that maximize the likelihood
+    - Parameter가 고정되어 있기 때문에 확률 추정에 parameter 사용
     - $$\hat{\theta} = \underset{\theta}{argmax} P(X|\theta) $$
-- Bayesians treat it as subjective(주관적)
-  - Parameter(theta) is random
-  - Data is fixed
+- Bayesian treat it as subjective(주관적)
+  - ***Parameter(theta) is random***
+  - ***Data is fixed***
+  - Parameter를 안다면 data를 추정 할 수 있음
   - Work for arbitrary number of letter points
   - e.g. in neural network, weights(parameters) are random. training set(data) is fixed
-  - What Bayesians will try to do is they would try to compute the posterior, the probability of the parameters given the data
-    - 결과로 원인을 찾는게 목표임
+  - What Bayesian will try to do is they would try to compute the posterior, the probability of the parameters given the data
+    - Data가 고정되어 있기 때문에 확률 추정에 data 사용
     - $$P(\theta|X) = \frac{P(X|\theta)P(\theta)}{P(X)}$$
     - It will compute posterior distribution
+    - $$P(\theta|X)$$ : posterior
+    - $$P(X|\theta)$$ : likelihood
+    - $$P(X)$$ : evidence
+    - $$P(X)$$ : prior (or regularizer)
 
 ### Classification of Bayesian
 
@@ -49,7 +55,8 @@ $$
 
 ### On-line learning
 
-- Bayesian methods are really good for online learning.
+- Bayesian methods are really good for on-line learning.
+- On-line learning : 현재 값을 그 다음 값을 얻기 위해 바로 사용 함.
 
 $$
 P_k(\theta) = P(\theta|x_k) = \frac{P(x_k |\theta)P_{k-1}(\theta)}{P(x_k)}
