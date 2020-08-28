@@ -68,7 +68,7 @@ $$
 - $$P_{k-1}(\theta)$$ : Prior
 - Can use new posterior as a prior to the next experiment.
 
-## How to define a model
+### How to define a model
 
 The most convenient way to do this is called the Bayesian Network.(Don't mix up with Bayesian neural network)
 
@@ -83,4 +83,60 @@ P(X_1, X_2, ... X_n) = \prod_{k=1}^n P(X_k | Pa(X_k))
 $$
 
 - Pa : Parents
+
+## Conjugate prior
+
+Conjugate : prior와 posterior가 같인 분포이면 conjugate하다고 함
+
+### Analytical inference
+
+$$
+P(\theta|X) = \frac{P(X|\theta)P(\theta)}{P(X)}
+$$
+
+- If we know $P(X)$, then we would able to make new X.
+
+### Maximum a posterior (MAP)
+
+$$
+\begin{align}
+\theta_{MP} & = \underset{\theta}{argmax}P(\theta|X) \\
+& = \underset{\theta}{argmax}\frac{P(X|\theta)P(\theta)}{P(X)} \\
+& = \underset{\theta}{argmax} P(X|\theta)P(\theta)
+\end{align}
+$$
+
+- We can get a Maximum a posterior without evidence(P(X))
+- However, it has a lot of problems
+  - Major one is that it is not invariant to re-parameterization
+    - For example, MAP of gaussian is changed after sigmoid is applied
+  - Next problem is we cannot use as a prior
+    - Shortly, we cannot a information for next prior from current prior
+    - On-line learning을 할 때 더 많은 정보를 얻을 수가 없음
+
+$$
+\begin{align}
+P_k(\theta) &= P(\theta|X_k) \\
+&= \frac{P(X_k|\theta)P_{k-1}(\theta)}{P(X_k)} \\
+&= \frac{P(X_k|\theta)\delta(\theta - \theta_{MP})}{P(X_k)} \\
+&= \delta(\theta - \theta_{MP})
+
+\end{align}
+$$
+
+- Prior도 $$\theta$$가 $$\theta_{MP}$$ 일때 최대 이기 때문에 추가정인 정보가 전파 되지 않음
+
+#### Summary
+
+Pros
+
+- Easy to compute
+
+Cons
+
+- Not invariant to re-parameterization
+- cannot use as a prior
+- Finds untypical point
+- Cannot compute credible intervals
+  - For example, when we got a 100 as a result, we cannot know it is $$100 \pm 0.001$$  or $$100 \pm 10$$
 
