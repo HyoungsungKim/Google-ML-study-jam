@@ -1,4 +1,4 @@
-# PWeek1
+# Week1
 
 ## Bayesian approach to statistics
 
@@ -140,3 +140,33 @@ Cons
 - Cannot compute credible intervals
   - For example, when we got a 100 as a result, we cannot know it is $$100 \pm 0.001$$  or $$100 \pm 10$$
 
+### Example: Normal, precision
+
+#### Gamma distribution
+
+$$
+\Gamma(\gamma|a,b) = \frac{b^a}{\Gamma(a)}\gamma^{a-1}e^{-br}
+$$
+
+- $$\mathbb{E}[\gamma] = \frac{a}{b}$$
+- $$Var[\gamma] = \frac{a}{b^2}$$
+
+For more information of gamma distribution, https://towardsdatascience.com/gamma-distribution-intuition-derivation-and-examples-55f407423840
+
+#### Precision
+
+- Precision is inverse of the variance
+  - For example, in Normal distrubution
+  - Precision($$\gamma$$) is $$\frac{1}{\sigma^2}$$
+
+#### Beta distribution
+
+- Normalized form of gamma distribution
+
+$$
+\Beta(X|a,b) = \frac{1}{B(a,b)}x^{a-1}(1-x)^{b-1}
+$$
+
+- $$B(a,b) = \frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}$$
+- $$\mathbb{E}[x] = \frac{a}{a+b}$$
+- $$Var[x] = \frac{ab}{(a+b)^2(a+b-1)}$$
